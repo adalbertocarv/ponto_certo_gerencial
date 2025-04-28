@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white30,
+      backgroundColor: Color.fromARGB(245, 245, 245, 245),
       body: Scrollbar(
         thumbVisibility: true,
         child: SingleChildScrollView(
@@ -24,8 +24,8 @@ class HomePage extends StatelessWidget {
                 children: [
                   NavigatorBar(),
                   SizedBox(
-                    height: 80,
-                  ),
+//                    height: 80,
+                      ),
                   LayoutBuilder(
                     builder: (context, constraints) {
                       if (constraints.maxWidth < 600) {
