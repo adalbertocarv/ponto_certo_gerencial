@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
                   ),
                   LayoutBuilder(
                     builder: (context, constraints) {
-                      if (constraints.maxWidth < 600) {
+                      if (constraints.maxWidth < 950) {
                         return Column(
                           children: [
                             DetalhePagina(),

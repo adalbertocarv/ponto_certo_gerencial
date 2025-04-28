@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class DetalhePagina extends StatelessWidget {
@@ -11,6 +12,18 @@ class DetalhePagina extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          /*
+          AutoSizeText(
+            'PONTO CERTO.\nMAPEAMENTO DE PARADAS',
+            maxLines: 2,
+            minFontSize: 20,
+            style: TextStyle(
+              fontSize: 80,
+              fontWeight: FontWeight.w800,
+              height: 0.9,
+            ),
+          ),
+          */
           Text(
             'PONTO CERTO.\n MAPEAMENTO DE PARADAS',
             style: TextStyle(
