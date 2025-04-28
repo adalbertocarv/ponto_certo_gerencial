@@ -24,8 +24,8 @@ class HomePage extends StatelessWidget {
                 children: [
                   NavigatorBar(),
                   SizedBox(
-//                    height: 80,
-                      ),
+                    height: 200,
+                  ),
                   LayoutBuilder(
                     builder: (context, constraints) {
                       if (constraints.maxWidth < 600) {
