@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ponto_certo_gerencial/views/Sobre/sobre.dart';
-import 'package:ponto_certo_gerencial/views/listas/listas_paradas.dart';
+import 'package:ponto_certo_gerencial/views/home/home_page.dart';
+import 'package:ponto_certo_gerencial/widgets/navigation_bar/navigation_bar.dart';
 
-class NavigatorBar extends StatelessWidget {
-  const NavigatorBar({super.key});
+class NavigationBarListagem extends StatelessWidget {
+  const NavigationBarListagem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,18 +12,15 @@ class NavigatorBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          SizedBox(
-            child: Image.asset('/gdf.png'),
-          ),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               MouseRegion(
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
-                  child: NavBarItem('Listagem de paradas'),
+                  child: NavBarItem('Paradas'),
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ListasParadas())),
+                      MaterialPageRoute(builder: (context) => HomePage())),
                 ),
               ),
               SizedBox(
@@ -33,29 +30,11 @@ class NavigatorBar extends StatelessWidget {
                   cursor: SystemMouseCursors.click,
                   child: GestureDetector(
                       onTap: () => Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Sobre())),
-                      child: NavBarItem('Sobre'))),
+                          MaterialPageRoute(builder: (context) => HomePage())),
+                      child: NavBarItem('Abrigos'))),
             ],
           )
         ],
-      ),
-    );
-  }
-}
-
-
-class NavBarItem extends StatelessWidget {
-  final String title;
-  const NavBarItem(
-    this.title,
-  );
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(
-        fontSize: 18,
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ponto_certo_gerencial/widgets/call_to_action/call_to_action.dart';
+import 'package:ponto_certo_gerencial/widgets/botao_acesso/botao_acesso_pagina.dart';
 import 'package:ponto_certo_gerencial/widgets/centered_view/centered_view.dart';
-import 'package:ponto_certo_gerencial/widgets/course_details/course_details.dart';
+import 'package:ponto_certo_gerencial/widgets/detalhe_pagina/detalhe_pagina.dart';
 import '../../widgets/navigation_bar/navigation_bar.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,19 +10,51 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: CenteredView(
-        child: Column(
-          children: <Widget>[
-            NavigatorBar(),
-            Expanded(
-                child: Row(
-              children: <Widget>[
-                CourseDetails(),
-                Expanded(child: Center(child: CallToAction('Paradas de Ônibus'),))
-              ],
-            ))
-          ],
+      backgroundColor: Colors.white30,
+      body: Scrollbar(
+        thumbVisibility: true,
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(), //animação suave do scroll
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: MediaQuery.of(context).size.height,
+            ),
+            child: CenteredView(
+              child: Column(
+                children: [
+                  NavigatorBar(),
+                  SizedBox(
+                    height: 80,
+                  ),
+                  LayoutBuilder(
+                    builder: (context, constraints) {
+                      if (constraints.maxWidth < 600) {
+                        return Column(
+                          children: [
+                            DetalhePagina(),
+                            Center(
+                              child: CallToAction('Paradas de Ônibus'),
+                            ),
+                          ],
+                        );
+                      } else {
+                        return Row(
+                          children: [
+                            DetalhePagina(),
+                            Expanded(
+                              child: Center(
+                                child: CallToAction('Paradas de Ônibus'),
+                              ),
+                            ),
+                          ],
+                        );
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );
