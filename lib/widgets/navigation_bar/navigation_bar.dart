@@ -43,7 +43,6 @@ class NavigatorBar extends StatelessWidget {
   }
 }
 
-
 class NavBarItem extends StatelessWidget {
   final String title;
   const NavBarItem(

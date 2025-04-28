@@ -13,7 +13,7 @@ class _ListasParadasState extends State<ListasParadas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white30,
+      backgroundColor: Color.fromARGB(245, 245, 245, 245),
       body: Scrollbar(
         thumbVisibility: true,
         child: SingleChildScrollView(
@@ -27,8 +27,8 @@ class _ListasParadasState extends State<ListasParadas> {
                 children: [
                   NavigationBarListagem(),
                   SizedBox(
-                    height: 80,
-                  ),
+//                    height: 80,
+                      ),
                 ],
               ),
             ),

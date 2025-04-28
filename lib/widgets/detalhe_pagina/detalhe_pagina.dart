@@ -20,7 +20,7 @@ class DetalhePagina extends StatelessWidget {
             height: 30,
           ),
           Text(
-            'Aplicativo Flutter para mapeamento, cadastro e envio de pontos de parada (ônibus) com funcionalidades offline. Desenvolvido para a SEMOB (Secretaria de Transporte e Mobilidade), focando em acessibilidade, rastreabilidade e eficiência.',
+            'Plataforma para cadastro, envio, edição e exclusão de pontos de parada (ônibus). Desenvolvido para a GEMOB/SUTER/SEMOB (Secretaria de Transporte e Mobilidade), focando em acessibilidade, rastreabilidade e eficiência.',
             style: TextStyle(fontSize: 21, height: 1.7),
           ),
         ],
