@@ -13,7 +13,7 @@ class NavigatorBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           SizedBox(
-            child: Image.asset('/gdf.png'),
+            child: Image.asset('assets/gdf.png'),
           ),
           Row(
             mainAxisSize: MainAxisSize.min,
