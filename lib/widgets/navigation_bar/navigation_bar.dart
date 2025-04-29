@@ -7,36 +7,56 @@ class NavigatorBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 100,
+      width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           SizedBox(
             child: Image.asset('assets/gdf.png'),
           ),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  child: NavBarItem('Listagem de paradas'),
-                  onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ListasParadas())),
-                ),
-              ),
-              SizedBox(
-                width: 60,
-              ),
-              MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: GestureDetector(
+          LayoutBuilder(builder: (context, constraints) {
+            if (constraints.maxWidth < 950) {
+              return Builder(
+                builder: (context) {
+                  return IconButton(
+                    icon: const Icon(Icons.menu),
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                  );
+                },
+              );
+            } else {
+              return Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      child: NavBarItem('Listagem de paradas'),
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ListasParadas())),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 60,
+                  ),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
                       onTap: () => Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Sobre())),
-                      child: NavBarItem('Sobre'))),
-            ],
-          )
+                      child: NavBarItem('Sobre'),
+                    ),
+                  ),
+                ],
+              );
+            }
+          }),
         ],
       ),
     );

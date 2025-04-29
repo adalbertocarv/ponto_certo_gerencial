@@ -40,6 +40,8 @@ dependencies:
   flutter_map_marker_popup: ^8.0.1
   geolocator: ^14.0.0
   auto_size_text: ^3.0.0
+  flutter_map_cancellable_tile_provider: ^3.1.0
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:

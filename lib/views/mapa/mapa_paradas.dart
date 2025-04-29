@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_map_cancellable_tile_provider/flutter_map_cancellable_tile_provider.dart';
 import 'package:flutter_map_marker_popup/flutter_map_marker_popup.dart';
 //import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
@@ -83,6 +84,7 @@ class _MapaParadasState extends State<MapaParadas> {
             ),
             children: [
               TileLayer(
+                tileProvider: CancellableNetworkTileProvider(),
                 urlTemplate:
                     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                 subdomains: ['a', 'b', 'c'],

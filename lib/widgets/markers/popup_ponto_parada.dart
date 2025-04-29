@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map_marker_popup/flutter_map_marker_popup.dart';
 import 'package:ponto_certo_gerencial/models/pontos_paradas.dart';
+import 'package:ponto_certo_gerencial/views/detalhamento_parada/detalhamento_parada.dart';
 
 class PopupPontoParada extends StatelessWidget {
   final ParadaModel pontoParada;
@@ -58,16 +59,17 @@ class PopupPontoParada extends StatelessWidget {
                       style: const TextStyle(color: Colors.white, fontSize: 14),
                     ),
                     //Imagem sem carregar até solução do backend
-                    // const SizedBox(height: 8),
-                    // Image.network(
-                    //   pontoParada.abrigoImg,
-                    //   width: double.infinity,
-                    //   height: 200,
-                    //   fit: BoxFit.cover,
-                    //   errorBuilder: (context, error, stackTrace) {
-                    //     return const Icon(Icons.image_not_supported, color: Colors.white);
-                    //   },
-                    // ),
+                    const SizedBox(height: 8),
+                    Image.network(
+                      pontoParada.abrigoImg,
+                      width: double.infinity,
+                      height: 200,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Icon(Icons.image_not_supported,
+                            color: Colors.white);
+                      },
+                    ),
                     const SizedBox(height: 8),
                     Text(
                       'Criado por: ${pontoParada.criadoPor}',
@@ -87,8 +89,10 @@ class PopupPontoParada extends StatelessWidget {
                     Row(
                       children: [
                         pontoParada.linhaEscolar
-                            ? const Icon(Icons.directions_bus, color: Colors.green)
-                            : const Icon(Icons.directions_bus, color: Colors.red),
+                            ? const Icon(Icons.directions_bus,
+                                color: Colors.green)
+                            : const Icon(Icons.directions_bus,
+                                color: Colors.red),
                         const SizedBox(width: 4),
                         const Text(
                           'Linha Escolar',
@@ -100,14 +104,42 @@ class PopupPontoParada extends StatelessWidget {
                     Row(
                       children: [
                         pontoParada.linhaStpc
-                            ? const Icon(Icons.directions_transit, color: Colors.green)
-                            : const Icon(Icons.directions_transit, color: Colors.red),
+                            ? const Icon(Icons.directions_transit,
+                                color: Colors.green)
+                            : const Icon(Icons.directions_transit,
+                                color: Colors.red),
                         const SizedBox(width: 4),
                         const Text(
                           'Linha STPC',
                           style: TextStyle(color: Colors.white, fontSize: 14),
                         ),
                       ],
+                    ),
+                    const SizedBox(height: 16),
+                    MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetalhamentoParada())),
+                        child: Container(
+                          margin: EdgeInsets.all(20),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 30, vertical: 7),
+                          decoration: BoxDecoration(
+                            color: Colors.blue.shade900,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Text(
+                            'Mais Detalhes',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -116,7 +148,7 @@ class PopupPontoParada extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 0,
+          bottom: 1,
           child: CustomPaint(
             size: const Size(20, 10),
             painter: TrianglePainter(),
