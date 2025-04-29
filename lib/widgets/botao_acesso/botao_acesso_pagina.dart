@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:ponto_certo_gerencial/views/mapa/mapa_paradas.dart';
 
@@ -23,7 +24,7 @@ class CallToAction extends StatelessWidget {
             color: Colors.blue.shade900,
             borderRadius: BorderRadius.circular(5),
           ),
-          child: Text(
+          child: AutoSizeText(
             title,
             style: TextStyle(
                 fontSize: 18, fontWeight: FontWeight.w800, color: Colors.white),
