@@ -12,7 +12,11 @@ class _DetalhamentoParadaState extends State<DetalhamentoParada> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CenteredView(child: Container()),
+      body: CenteredView(child: ListView(
+      children: [
+        
+      ],
+      )),
     );
   }
 }

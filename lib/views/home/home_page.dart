@@ -9,9 +9,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ScrollController _scrollController = ScrollController();
+
     return Scaffold(
       backgroundColor: Color.fromARGB(245, 245, 245, 245),
       body: Scrollbar(
+        controller: _scrollController,
         thumbVisibility: true,
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(), //animação suave do scroll

@@ -8,10 +8,10 @@ class PopupPontoParada extends StatelessWidget {
   final PopupController popupController;
 
   const PopupPontoParada({
-    Key? key,
+    super.key,
     required this.pontoParada,
     required this.popupController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class PopupPontoParada extends StatelessWidget {
                 maxHeight: 400,
               ),
               padding: const EdgeInsets.all(12),
-              color: Colors.black.withOpacity(0.85),
+              color: Colors.black.withValues(alpha: 0.85),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,7 +163,7 @@ class TrianglePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.black.withOpacity(0.85)
+      ..color = Colors.black.withValues(alpha: 0.85)
       ..style = PaintingStyle.fill;
 
     final path = Path()

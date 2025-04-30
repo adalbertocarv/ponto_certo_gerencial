@@ -120,11 +120,11 @@ class _MapaParadasState extends State<MapaParadas> {
             left: 40,
             child: FloatingActionButton(
               onPressed: () => Navigator.pop(context),
+              backgroundColor: Colors.blueAccent,
               child: const Icon(
                 Icons.arrow_back_ios_new,
                 color: Colors.white,
               ),
-              backgroundColor: Colors.blueAccent,
             ),
           ),
         ],

@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class DetalhePagina extends StatelessWidget {
   const DetalhePagina({super.key});
@@ -10,7 +9,7 @@ class DetalhePagina extends StatelessWidget {
     final larguraTela = MediaQuery.of(context).size.width;
     final telaLarga = larguraTela >= 1300;
 
-    return Container(
+    return SizedBox(
       width: 600,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
