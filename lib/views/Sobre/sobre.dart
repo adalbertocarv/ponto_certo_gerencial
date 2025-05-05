@@ -77,11 +77,15 @@ class Sobre extends StatelessWidget {
                                 'Existência de abrigo no ponto',
                                 'Condições de acessibilidade',
                                 'Inserção de imagens',
+                                'Funcionalidades como visualização em mapa com camadas de satélite.'
                               ]),
-                              const SizedBox(height: 12),
-                              _paragraph(
-                                'Com funcionalidades como visualização em mapa com camadas de satélite...',
-                              ),
+                              const SizedBox(height: 24),
+                              _sectionTitle('Equipe Demandante/Organizacional'),
+                              const SizedBox(height: 24),
+                              _bulletPoints([
+                                'Ana Carolina Pereira de Araújo',
+                                'Gerson Antônio Silva SOares Ferreira',
+                              ]),
                               const SizedBox(height: 24),
                               _sectionTitle('Equipe de Desenvolvimento'),
                               const SizedBox(height: 24),

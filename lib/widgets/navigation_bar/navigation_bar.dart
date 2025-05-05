@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ponto_certo_gerencial/views/Sobre/sobre.dart';
+import 'package:ponto_certo_gerencial/views/cadastro/cadastro_usuario.dart';
 import 'package:ponto_certo_gerencial/views/listas/listas_paradas.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import '../../views/auth/login_page.dart';
 
 class NavigatorBar extends StatelessWidget {
   const NavigatorBar({super.key});
@@ -37,20 +41,47 @@ class NavigatorBar extends StatelessWidget {
                     child: GestureDetector(
                       child: NavBarItem('Listagem de paradas'),
                       onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ListasParadas())),
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ListasParadas()),
+                      ),
                     ),
                   ),
-                  SizedBox(
-                    width: 60,
-                  ),
+                  const SizedBox(width: 60),
                   MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: GestureDetector(
-                      onTap: () => Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Sobre())),
+                      child: NavBarItem('Cadastrar usuário'),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CadastroTrabalhadorScreen()),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 60),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Sobre()),
+                      ),
                       child: NavBarItem('Sobre'),
+                    ),
+                  ),
+                  const SizedBox(width: 60),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () async {
+                        await FirebaseAuth.instance.signOut();
+                        Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(builder: (_) => const LoginPage()),
+                          (route) => false,
+                        );
+                      },
+                      child: NavBarItem('Sair'),
                     ),
                   ),
                 ],
