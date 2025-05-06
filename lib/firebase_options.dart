@@ -53,12 +53,12 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDE6VYmjT1BaUqTp_AyokfHSHMCBRdiQaI',
-    appId: '1:565141500987:web:612b64cc5141ba76bd981e',
-    messagingSenderId: '565141500987',
-    projectId: 'ponto-certo-gerencial',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
     authDomain: 'ponto-certo-gerencial.firebaseapp.com',
     storageBucket: 'ponto-certo-gerencial.firebasestorage.app',
-    measurementId: 'G-KS7GLW8VW0',
+    measurementId: '',
   );
 }
