@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import '../models/usuario.dart';
 
 class UsuarioService {
-  static const String _baseUrl = 'http://dados.semob.df.gov.br/usuarios';
+  static const String _baseUrl = 'https://dados.semob.df.gov.br/usuarios';
 
   static Future<List<UsuarioModel>> buscarUsuarios() async {
     final response = await http.get(Uri.parse(_baseUrl));

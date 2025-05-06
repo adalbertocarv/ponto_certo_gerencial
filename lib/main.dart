@@ -5,8 +5,6 @@ import 'views/home/home_page.dart';
 import 'views/auth/login_page.dart';
 import 'firebase_options.dart'; // gerado pelo Firebase CLI
 
-
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -24,16 +22,22 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Ponto Certo - Gerencial',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.blue,
+        ).copyWith(
+          primary:
+              const Color(0xFF0D47A1), // Equivalente a Colors.blue.shade900
+          surface: Colors.white,
+        ),
         scaffoldBackgroundColor: Colors.white,
-        colorScheme: ColorScheme.fromSwatch().copyWith(surface: Colors.white),
         textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Open Sans'),
       ),
       home: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Scaffold(body: Center(child: CircularProgressIndicator()));
+            return const Scaffold(
+                body: Center(child: CircularProgressIndicator()));
           } else if (snapshot.hasData) {
             return const HomePage();
           } else {
