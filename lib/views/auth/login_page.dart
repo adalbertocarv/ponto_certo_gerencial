@@ -311,26 +311,26 @@ class _LoginPageState extends State<LoginPage>
   }
 }
 
-Future<void> _JanelaDialogo(BuildContext context) {
-  return showDialog<void>(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: const Text('Esqueceu a senha?'),
-        content: const Text(
-          'Mande mensagem no Whatsapp pedindo socorro',
-        ),
-        actions: <Widget>[
-          TextButton(
-            style: TextButton.styleFrom(
-                textStyle: Theme.of(context).textTheme.labelLarge),
-            child: const Text('Ok'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      );
-    },
-  );
-}
+// Future<void> _JanelaDialogo(BuildContext context) {
+//   return showDialog<void>(
+//     context: context,
+//     builder: (BuildContext context) {
+//       return AlertDialog(
+//         title: const Text('Esqueceu a senha?'),
+//         content: const Text(
+//           'Mande mensagem no Whatsapp pedindo socorro',
+//         ),
+//         actions: <Widget>[
+//           TextButton(
+//             style: TextButton.styleFrom(
+//                 textStyle: Theme.of(context).textTheme.labelLarge),
+//             child: const Text('Ok'),
+//             onPressed: () {
+//               Navigator.of(context).pop();
+//             },
+//           ),
+//         ],
+//       );
+//     },
+//   );
+// }

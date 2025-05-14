@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ponto_certo_gerencial/widgets/centered_view/centered_view.dart';
-import '../../widgets/navigation_bar/navigation_bar.dart';
+import 'package:ponto_certo_gerencial/views/widgets/centered_view/centered_view.dart';
+import '../widgets/navigation_bar/navigation_bar.dart';
 import '../home/home_page.dart';
 
 class Sobre extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ponto_certo_gerencial/views/home/home_page.dart';
-import 'package:ponto_certo_gerencial/widgets/navigation_bar/navigation_bar.dart';
+import 'package:ponto_certo_gerencial/views/widgets/navigation_bar/navigation_bar.dart';
 
 class NavigationBarListagem extends StatelessWidget {
   const NavigationBarListagem({super.key});

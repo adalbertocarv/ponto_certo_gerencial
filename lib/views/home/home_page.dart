@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ponto_certo_gerencial/widgets/botao_acesso/botao_acesso_pagina.dart';
-import 'package:ponto_certo_gerencial/widgets/centered_view/centered_view.dart';
-import 'package:ponto_certo_gerencial/widgets/detalhe_pagina/detalhe_pagina.dart';
-import '../../widgets/navigation_bar/navigation_bar.dart';
+import 'package:ponto_certo_gerencial/views/widgets/botao_acesso/botao_acesso_pagina.dart';
+import 'package:ponto_certo_gerencial/views/widgets/centered_view/centered_view.dart';
+import 'package:ponto_certo_gerencial/views/widgets/detalhe_pagina/detalhe_pagina.dart';
+import '../widgets/navigation_bar/navigation_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

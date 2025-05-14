@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:ponto_certo_gerencial/models/usuario.dart';
-import 'package:ponto_certo_gerencial/widgets/centered_view/centered_view.dart';
+import 'package:ponto_certo_gerencial/views/widgets/centered_view/centered_view.dart';
 import '../../services/usuario.dart';
 import '../home/home_page.dart';
-import '../../widgets/navigation_bar/navigation_bar.dart';
+import '../widgets/navigation_bar/navigation_bar.dart';
 
 class CadastroTrabalhadorScreen extends StatefulWidget {
   const CadastroTrabalhadorScreen({Key? key}) : super(key: key);

@@ -6,7 +6,7 @@ import 'package:flutter_map_marker_popup/flutter_map_marker_popup.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:ponto_certo_gerencial/services/dados_espaciais/pontos_paradas.dart';
 import '../../models/pontos_paradas.dart';
-import '../../widgets/markers/popup_ponto_parada.dart';
+import '../widgets/markers/popup_ponto_parada.dart';
 
 class MapaParadas extends StatefulWidget {
   const MapaParadas({super.key});

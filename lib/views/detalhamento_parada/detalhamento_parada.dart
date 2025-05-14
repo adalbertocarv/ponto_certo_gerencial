@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ponto_certo_gerencial/widgets/centered_view/centered_view.dart';
+import 'package:ponto_certo_gerencial/views/widgets/centered_view/centered_view.dart';
 
 class DetalhamentoParada extends StatefulWidget {
   const DetalhamentoParada({super.key});

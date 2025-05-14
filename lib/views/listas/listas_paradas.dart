@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ponto_certo_gerencial/widgets/centered_view/centered_view.dart';
-import 'package:ponto_certo_gerencial/widgets/navigation_bar/navigation_bar_listagem.dart';
+import 'package:ponto_certo_gerencial/views/widgets/centered_view/centered_view.dart';
+import 'package:ponto_certo_gerencial/views/widgets/navigation_bar/navigation_bar_listagem.dart';
 
 class ListasParadas extends StatefulWidget {
   const ListasParadas({super.key});
