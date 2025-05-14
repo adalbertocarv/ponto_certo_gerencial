@@ -58,6 +58,7 @@ class _MapaParadasState extends State<MapaParadas> {
 
   @override
   Widget build(BuildContext context) {
+
     if (_carregando) {
       return const Scaffold(
         body: Center(child: CircularProgressIndicator()),

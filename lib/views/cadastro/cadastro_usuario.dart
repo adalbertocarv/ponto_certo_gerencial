@@ -206,37 +206,62 @@ class _CadastroTrabalhadorScreenState extends State<CadastroTrabalhadorScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: GestureDetector(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const HomePage()),
+                  if (screenWidth > 950)
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage()),
+                            ),
+                            child: const Icon(Icons.arrow_back_ios),
                           ),
-                          child: const Icon(Icons.arrow_back_ios),
                         ),
-                      ),
-                      MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: GestureDetector(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const HomePage()),
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage()),
+                            ),
+                            child: NavBarItem('Voltar'),
                           ),
-                          child: NavBarItem('Voltar'),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    )
+                  else
+                    const SizedBox.shrink(),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        if (screenWidth <= 950)
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextButton.icon(
+                              onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const HomePage()),
+                              ),
+                              icon: const Icon(
+                                Icons.arrow_back_ios,
+                                size: 20,
+                                color: Colors.black,
+                              ),
+                              label: const Text(
+                                'Voltar',
+                                style: const TextStyle(
+                                    fontSize: 18, color: Colors.black),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 20,),
                         Center(
                           child: SingleChildScrollView(
                             child: ConstrainedBox(

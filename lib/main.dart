@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ).copyWith(
           primary:
-              const Color(0xFF0D47A1), // Equivalente a Colors.blue.shade900
+              const Color(0xFF0D47A1),
           surface: Colors.white,
         ),
         scaffoldBackgroundColor: Colors.white,

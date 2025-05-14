@@ -9,12 +9,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ScrollController _scrollController = ScrollController();
+    final ScrollController scrollController = ScrollController();
+    // Chave global para acessar o Scaffold
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(245, 245, 245, 245),
+      key: scaffoldKey, // Adicionando a chave ao Scaffold
+      backgroundColor: const Color.fromARGB(245, 245, 245, 245),
+      // Adicionando o drawer aqui
+      drawer: DrawerMenu(),
       body: Scrollbar(
-        controller: _scrollController,
+        controller: scrollController,
         thumbVisibility: true,
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(), //animação suave do scroll
@@ -25,8 +30,9 @@ class HomePage extends StatelessWidget {
             child: CenteredView(
               child: Column(
                 children: [
-                  NavigatorBar(),
-                  SizedBox(
+                  // Passando a scaffoldKey para o NavigatorBar personalizado
+                  CustomNavigatorBar(scaffoldKey: scaffoldKey),
+                  const SizedBox(
                     height: 200,
                   ),
                   LayoutBuilder(
