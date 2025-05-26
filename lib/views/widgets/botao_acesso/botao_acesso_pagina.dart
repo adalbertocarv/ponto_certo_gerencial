@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:ponto_certo_gerencial/views/mapa/mapa_pesquisa.dart';
+import '../../mapa/mapa.dart';
 
 class CallToAction extends StatelessWidget {
   final String title;
@@ -15,7 +15,7 @@ class CallToAction extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => MapaPesquisa()),
+            MaterialPageRoute(builder: (context) => MapaParadasPesquisa()),
           );
         },
         child: Container(

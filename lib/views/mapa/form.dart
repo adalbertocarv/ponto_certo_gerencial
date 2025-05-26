@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Formulario extends StatelessWidget {
-  const Formulario({super.key});
+class Formulario extends StatefulWidget {
+  const Formulario({
+    super.key,
+    required this.onFiltroMudou,
+  });
+
+  /// Callback que devolve o filtro digitado ou pesquisado.
+  final ValueChanged<String> onFiltroMudou;
+
+  @override
+  State<Formulario> createState() => _FormularioState();
+}
+
+class _FormularioState extends State<Formulario> {
+  final _controller = TextEditingController();
+
+  void _enviarFiltro() => widget.onFiltroMudou(_controller.text);
 
   @override
   Widget build(BuildContext context) {
@@ -10,50 +25,44 @@ class Formulario extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min, // mantém altura compacta
         children: [
-          SizedBox(height: 12),
-          DefaultTextStyle(
-              style: TextStyle(fontSize: 18),
-              child: Text(
-                "Parada de ônibus:",
-              )),
+          const SizedBox(height: 12),
+          const Text(
+            'Parada de ônibus:',
+            style: TextStyle(fontSize: 18),
+          ),
           Material(
             child: TextFormField(
+              controller: _controller,
+              onChanged: widget.onFiltroMudou,
               keyboardType: TextInputType.number,
               style: GoogleFonts.poppins(fontSize: 16),
               decoration: InputDecoration(
                 hintText: 'Endereço, ID da parada, Tipo do abrigo',
-                hintStyle: GoogleFonts.poppins(
-                  color: Colors.grey[600],
-                ),
+                hintStyle: GoogleFonts.poppins(color: Colors.grey[600]),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                   borderSide: BorderSide.none,
                 ),
                 filled: true,
                 fillColor: Colors.grey[300],
-                prefixIcon: Icon(
-                  Icons.directions_bus_filled,
-                  color: const Color(0xFF448AFF),
-                ),
-                contentPadding: EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 16,
-                ),
+                prefixIcon: const Icon(Icons.directions_bus_filled,
+                    color: Color(0xFF448AFF)),
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
               ),
+              onFieldSubmitted: (_) => _enviarFiltro(),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           TextButton.icon(
-            onPressed: () {},
+            onPressed: _enviarFiltro, // 🔑 botão usa o mesmo callback
             style: TextButton.styleFrom(
               backgroundColor: Colors.blueAccent[200],
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             ),
-            icon: Icon(
-              Icons.loupe,
-              color: Colors.white,
-            ),
+            icon: const Icon(Icons.loupe, color: Colors.white),
             label: Text(
               'Buscar Parada',
               style: GoogleFonts.poppins(
@@ -63,7 +72,6 @@ class Formulario extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
         ],
       ),
     );

@@ -2,8 +2,16 @@ import 'package:flutter/material.dart';
 import './mapa_paradas.dart';
 import './form.dart';
 
-class MapaPesquisa extends StatelessWidget {
+class MapaPesquisa extends StatefulWidget {
   const MapaPesquisa({super.key});
+
+  @override
+  State<MapaPesquisa> createState() => _MapaPesquisaState();
+}
+
+class _MapaPesquisaState extends State<MapaPesquisa> {
+  // ==================== 1. _filtro AGORA É CAMPO DE ESTADO ====================
+  String _filtro = '';
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +21,14 @@ class MapaPesquisa extends StatelessWidget {
       body: screenWidth > 950
           ? Row(
               children: [
+                // --------- COLUNA LATERAL (desktop) ---------
                 Container(
                   width: 380,
                   color: Colors.grey[100],
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // cabeçalho
                       Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 12, vertical: 16),
@@ -59,16 +69,22 @@ class MapaPesquisa extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Formulario(),
+                      // ---------- Formulário com callback ----------
+                      Formulario(
+                        onFiltroMudou: (valor) =>
+                            setState(() => _filtro = valor), // ✅
+                      ),
                     ],
                   ),
                 ),
-                Expanded(child: MapaParadas()),
+                // ------ MAPA recebe filtro ------
+                Expanded(child: MapaParadas(filtro: _filtro)),
               ],
             )
+          // ================== LAYOUT MÓVEL ==================
           : Stack(
               children: [
-                MapaParadas(),
+                MapaParadas(filtro: _filtro),
                 DraggableScrollableSheet(
                   initialChildSize: 0.15,
                   minChildSize: 0.1,
@@ -79,7 +95,7 @@ class MapaPesquisa extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: const BorderRadius.vertical(
                             top: Radius.circular(16)),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.black12,
                             blurRadius: 10,
@@ -113,7 +129,11 @@ class MapaPesquisa extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(height: 10),
-                              Formulario(),
+                              // ---------- Formulário móvel ----------
+                              Formulario(
+                                onFiltroMudou: (v) =>
+                                    setState(() => _filtro = v),
+                              ),
                             ],
                           ),
                         ),

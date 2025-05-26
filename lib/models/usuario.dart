@@ -30,4 +30,20 @@ class UsuarioModel {
       'EmailUsuario': email,
     };
   }
+
+  UsuarioModel copyWith({
+    int? id,
+    String? nome,
+    String? matricula,
+    String? email,
+    DateTime? criadoEm,
+  }) {
+    return UsuarioModel(
+      id: id ?? this.id,
+      nome: nome ?? this.nome,
+      matricula: matricula ?? this.matricula,
+      email: email ?? this.email,
+      criadoEm: criadoEm ?? this.criadoEm,
+    );
+  }
 }

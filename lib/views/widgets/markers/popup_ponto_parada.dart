@@ -60,16 +60,16 @@ class PopupPontoParada extends StatelessWidget {
                     ),
                     //Imagem sem carregar até solução do backend
                     const SizedBox(height: 8),
-                    Image.network(
-                      pontoParada.abrigoImg,
-                      width: double.infinity,
-                      height: 200,
-                      fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) {
-                        return const Icon(Icons.image_not_supported,
-                            color: Colors.white);
-                      },
-                    ),
+                    // Image.network(
+                    //   pontoParada.abrigoImg,
+                    //   width: double.infinity,
+                    //   height: 200,
+                    //   fit: BoxFit.cover,
+                    //   errorBuilder: (context, error, stackTrace) {
+                    //     return const Icon(Icons.image_not_supported,
+                    //         color: Colors.white);
+                    //   },
+                    // ),
                     const SizedBox(height: 8),
                     Text(
                       'Criado por: ${pontoParada.criadoPor}',
