@@ -6,8 +6,7 @@ import '../../models/pontos_paradas.dart';
 
 class PontoParadaRemoteService {
   static Future<List<ParadaModel>> buscarPontos() async {
-    //final url = Uri.parse('${CaminhoBackend.baseUrl}/pontos/novos/pontos');
-    final url = Uri.parse('http://10.233.144.111:8080/pontos/novos/pontos');
+    final url = Uri.parse('${CaminhoBackend.baseUrl}/pontos/novos/pontos');
 
     try {
       final response = await http.get(url);
