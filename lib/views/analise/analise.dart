@@ -134,7 +134,7 @@ class Analise extends StatelessWidget {
                                       child: StatCard(
                                         title: 'Total de paradas',
                                         value: total,
-                                        assetPath: 'bus_stop.png',
+                                        assetPath: 'assets/bus_stop.png',
                                       ),
                                     ),
                                   ],
