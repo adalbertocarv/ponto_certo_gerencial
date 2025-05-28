@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ponto_certo_gerencial/views/Sobre/sobre.dart';
 import 'package:ponto_certo_gerencial/views/cadastro/cadastro_usuario.dart';
-import 'package:ponto_certo_gerencial/views/listas/listas_paradas.dart';
+import 'package:ponto_certo_gerencial/views/analise/analise.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../auth/login_page.dart';
 
@@ -98,10 +98,9 @@ class DrawerMenu extends StatelessWidget {
   List<MenuItemData> _getMenuItems(BuildContext context) {
     return [
       MenuItemData(
-        title: 'Listagem de paradas',
+        title: 'Análise',
         onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (_) => ListasParadas()));
+          Navigator.push(context, MaterialPageRoute(builder: (_) => Analise()));
         },
       ),
       MenuItemData(
