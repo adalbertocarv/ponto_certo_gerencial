@@ -82,21 +82,22 @@ class Analise extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 120),
+                      const SizedBox(height: 80),
                     ],
                   ),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.start,
-                  //   children: [
-                  //     Container(
-                  //       child: Text(
-                  //         'TOTAL DE PARADAS',
-                  //         style: TextStyle(
-                  //             fontSize: 26, fontWeight: FontWeight.bold),
-                  //       ),
-                  //     )
-                  //   ],
-                  // ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        child: Text(
+                          'Ponto Certo Gerencial - ANÁLISE',
+                          style: TextStyle(
+                              fontSize: 36, fontWeight: FontWeight.bold),
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 80),
                   FutureBuilder<List<Map<String, dynamic>>>(
                     future: buscarAbrigosAgrupados(),
                     builder: (context, snap) {
@@ -125,8 +126,10 @@ class Analise extends StatelessWidget {
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                // ─── Texto com a contagem total ───
+                                // ─── Texto com a contagem total - KPI ───
                                 Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     SizedBox(
                                       width:
@@ -134,7 +137,27 @@ class Analise extends StatelessWidget {
                                       child: StatCard(
                                         title: 'Total de paradas',
                                         value: total,
-                                        assetPath: 'assets/bus_stop.png',
+                                        assetPath: 'bus_stop.png',
+                                      ),
+                                    ),
+                                    SizedBox(),
+                                    SizedBox(
+                                      width:
+                                          350, // largura fixa para o StatCard
+                                      child: StatCard(
+                                        title: 'Total de paradas',
+                                        value: total,
+                                        assetPath: 'bus_stop.png',
+                                      ),
+                                    ),
+                                    SizedBox(),
+                                    SizedBox(
+                                      width:
+                                          350, // largura fixa para o StatCard
+                                      child: StatCard(
+                                        title: 'Total de paradas',
+                                        value: total,
+                                        assetPath: 'bus_stop.png',
                                       ),
                                     ),
                                   ],
@@ -208,6 +231,10 @@ class Analise extends StatelessWidget {
                                     crosshair: CrosshairGuide(),
                                   ),
                                 ),
+
+                                Container(
+                                  
+                                )
                               ],
                             ),
                           ),
