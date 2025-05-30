@@ -74,6 +74,8 @@ flutter:
   assets:
     - assets/gdf.png
     - assets/bus_stop.png
+    - assets/amico.png
+    - assets/stop_yellow.png
       #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

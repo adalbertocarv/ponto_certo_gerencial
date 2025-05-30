@@ -113,6 +113,8 @@ class Analise extends StatelessWidget {
                         (soma, item) => soma + (item['quantidade'] as int),
                       );
 
+                      final total2 = total * 1.097;
+
                       // 2) Altura dinâmica do gráfico
                       final alturaChart =
                           (_alturaBarra * dados.length).clamp(200.0, 600.0) +
@@ -135,9 +137,9 @@ class Analise extends StatelessWidget {
                                       width:
                                           350, // largura fixa para o StatCard
                                       child: StatCard(
-                                        title: 'Total de paradas',
-                                        value: total,
-                                        assetPath: 'bus_stop.png',
+                                        titulo: 'Total de paradas',
+                                        valor: total,
+                                        assetPath: 'assets/bus_stop.png',
                                       ),
                                     ),
                                     SizedBox(),
@@ -145,9 +147,9 @@ class Analise extends StatelessWidget {
                                       width:
                                           350, // largura fixa para o StatCard
                                       child: StatCard(
-                                        title: 'Total de paradas',
-                                        value: total,
-                                        assetPath: 'bus_stop.png',
+                                        titulo: 'Total de abrigos',
+                                        valor: total2.round(),
+                                        assetPath: 'assets/amico.png',
                                       ),
                                     ),
                                     SizedBox(),
@@ -155,9 +157,9 @@ class Analise extends StatelessWidget {
                                       width:
                                           350, // largura fixa para o StatCard
                                       child: StatCard(
-                                        title: 'Total de paradas',
-                                        value: total,
-                                        assetPath: 'bus_stop.png',
+                                        titulo: 'Total de gue',
+                                        valor: total,
+                                        assetPath: 'assets/stop_yellow.png',
                                       ),
                                     ),
                                   ],
@@ -232,9 +234,7 @@ class Analise extends StatelessWidget {
                                   ),
                                 ),
 
-                                Container(
-                                  
-                                )
+                                Container()
                               ],
                             ),
                           ),

@@ -1,30 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-
 class StatCard extends StatelessWidget {
-  final String title;
-  final int value;
+  final String titulo;
+  final int valor;
   final String assetPath;
-  final double height;
+  final double altura;
   final Color color;
 
   const StatCard({
     super.key,
-    required this.title,
-    required this.value,
+    required this.titulo,
+    required this.valor,
     required this.assetPath,
-    this.height = 140,
+    this.altura = 140,
     this.color = const Color(0xFF0069B4), // azul SEMOB
   });
 
   @override
   Widget build(BuildContext context) {
     // formata 3610 → 3.610 (pt-BR)
-    final valorStr = NumberFormat.decimalPattern('pt_BR').format(value);
+    final valorStr = NumberFormat.decimalPattern('pt_BR').format(valor);
 
     return Container(
-      height: height,
+      height: altura,
       padding: const EdgeInsets.symmetric(horizontal: 24),
       decoration: BoxDecoration(
         color: color,
@@ -35,7 +34,7 @@ class StatCard extends StatelessWidget {
           // ─── imagem ───
           Image.asset(
             assetPath,
-            width: height - 32,          // mantém proporção dentro do card
+            width: altura - 32, // mantém proporção dentro do card
             fit: BoxFit.contain,
           ),
           const Spacer(),
@@ -45,7 +44,7 @@ class StatCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                title,
+                titulo,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16,
