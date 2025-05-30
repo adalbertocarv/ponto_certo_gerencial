@@ -113,6 +113,9 @@ class Analise extends StatelessWidget {
                         (soma, item) => soma + (item['quantidade'] as int),
                       );
 
+                      //PELO AMOR DE DEUS!!! LEMBRAR DE
+                      //ALTERAR ISSO AQUI QUANDO FIZER O ENDPOINT
+                      //NUMERO APENAS FICTICIO
                       final total2 = total * 1.097;
 
                       // 2) Altura dinâmica do gráfico
@@ -157,9 +160,10 @@ class Analise extends StatelessWidget {
                                       width:
                                           350, // largura fixa para o StatCard
                                       child: StatCard(
-                                        titulo: 'Total de gue',
-                                        valor: total,
-                                        assetPath: 'assets/stop_yellow.png',
+                                        titulo: "RA's Mapeadas",
+                                        //valor ficticio fxo
+                                        valor: 29,
+                                        assetPath: 'assets/map.png',
                                       ),
                                     ),
                                   ],
